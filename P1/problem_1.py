@@ -26,10 +26,10 @@ def sqrt(number):
             return square_root
         if number < square_root ** 2:
             # approximation too big
-            upper_bound = square_root
+            upper_bound = square_root - 1
         else:
             # approximation too small
-            lower_bound = square_root
+            lower_bound = square_root + 1
         square_root = (lower_bound + upper_bound) // 2
 
 # test cases
