@@ -37,7 +37,7 @@ def main():
     # edge cases
     print("Pass" if  (sqrt(0) == 0) else "Fail")
     sqrt(-1)
-    #print('Pass' if (sqrt(123456789) == 11111) else "Fail")
+    print('Pass' if (sqrt(123456789) == 11111) else "Fail")
     # normal cases
     print("Pass" if  (sqrt(9) == 3) else "Fail")
     print("Pass" if  (sqrt(16) == 4) else "Fail")
