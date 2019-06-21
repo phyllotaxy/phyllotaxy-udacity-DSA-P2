@@ -14,20 +14,25 @@ def sort_012(input_list):
     # 2. All indexes > right have values strictly greater than 1 (i.e., 2).
     left, right = 0, len(input_list) - 1
     i = left
-    # Since
+    # Since:
     # 1. Either i increases or right decreases.
     # 2. Once i > right, the while loop terminates
-    # The algorithm is one pass.
+    # the algorithm is one pass.
     while i <= right:
-        if input_list[i] < pivot:
-            input_list[i], input_list[left] = input_list[left], input_list[i]
-            left += 1
+        if input_list[i] <= pivot:
+            if input_list[i] < pivot:
+                # If input_list[i] < 1, we swap the value at position i and left.
+                input_list[i], input_list[left] = input_list[left], input_list[i]
+                # left then points to the next location. Invariant 1 is maintained.
+                left += 1
+            # If input_list[i] = 1, we do nothing except increment i.
             i += 1
-        elif input_list[i] > pivot:
+        else:
+            # If input_list[i] > 1, we swap the value at position i and right.
+            # right then points to the previous location. Invariant 2 is maintained.
+            # Note that i should not be changed here.
             input_list[i], input_list[right] = input_list[right], input_list[i]
             right -= 1
-        else:
-            i += 1
         # If we've encountered a value = 1, do nothing and advance i.
     return input_list
 
