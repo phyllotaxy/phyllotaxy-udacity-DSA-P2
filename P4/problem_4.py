@@ -12,6 +12,7 @@ def sort_012(input_list):
     # The following invariants are maintained:
     # 1. All indexes < left have value strictly less that 1 (i.e., 0).
     # 2. All indexes > right have values strictly greater than 1 (i.e., 2).
+    # 3. All indexes <= i have values less than or equal to 1 (i.e., 0 or 1)
     left, right = 0, len(input_list) - 1
     i = left
     # Since:
@@ -30,7 +31,7 @@ def sort_012(input_list):
         else:
             # If input_list[i] > 1, we swap the value at position i and right.
             # right then points to the previous location. Invariant 2 is maintained.
-            # Note that i should not be changed here.
+            # Note that i should not be changed here, otherwise invariant 3 might be violated.
             input_list[i], input_list[right] = input_list[right], input_list[i]
             right -= 1
         # If we've encountered a value = 1, do nothing and advance i.
