@@ -1,6 +1,19 @@
 Reasoning:
+In order to do this in a single traversal, two additional variables are introduced,
+which point to specific indexes in the array. All indexes strictly smaller than
+left have values strictly smaller than 1 (i.e., 0); all indexes strictly larger than
+right have values strictly larger than 1 (i.e., 2); all indexes smaller than or equal
+to i have values smaller than or equal to 1 (i.e., 0 or 1). These invariants are maintained
+throughout the algorithm in the following way: if i encounters the value 0, its content
+is swapped with the content of left, both left and i are then incremented; if i encounters
+the value 2, its content is swapped with the content of right, only right is decremented
+(i is not incremented as this might violate the third invariant); if i encounters
+the value 1, i is incremented without doing anything else. The algorithm terminates
+when i becomes at least as large as right.
 
 Time Complexity:
-
+Since the algorithm goes through the list only once, the time complexity is in O(n).
 
 Space Complexity:
+The additional space used by the algorithm does not grow with the size of the
+input, which makes the space complexity O(1).

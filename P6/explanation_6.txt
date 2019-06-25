@@ -1,6 +1,11 @@
 Reasoning:
+The algorithm basically performs a one pass bubbling, i.e., one iteration of
+bubble sort. As it bubbles both the maximum and minimum element at the same time,
+only one traversal is needed.
 
 Time Complexity:
-
+O(n).
 
 Space Complexity:
+The additional space used by the algorithm does not grow with the size of the
+input, which makes the space complexity O(1).

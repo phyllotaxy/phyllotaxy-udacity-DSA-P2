@@ -1,6 +1,15 @@
 Reasoning:
+The first part of the algorithm tries to find the "rotation point", i.e., the index of
+the smallest element in the array before rotation. (I'm not sure if there is a way to
+do it without finding this index.) This follows an approach that is similar to binary
+search. The second part of the algorithm uses binary search to find the number on
+either the left or the right side of the "rotation point".
 
 Time Complexity:
-
+- The first part of the algorithm is in O(log(n)).
+- The second part of the algorithm is also in O(log(n)).
+The overall complexity is in O(log(n)).
 
 Space Complexity:
+The additional space used by the algorithm does not grow with the size of the
+input, which makes the space complexity O(1).

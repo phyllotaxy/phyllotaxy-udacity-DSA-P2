@@ -1,6 +1,22 @@
 Reasoning:
+Base case: if the node is a leaf node, it is already a word, the suffixes() method
+should return a list containing only one element, namely the suffix, which is provided
+through the argument.
+Induction step:
+- if any of the children of the parent node is a word but not a leaf node,
+we should concatenate the character that represents this child together with the
+suffix that is provided through the argument. Then we append the concatenated suffix
+to the suffix list of the parent node.
+- if any of the children of the parent node is neither a word nor a leaf node, we
+collect all of the suffixes of this child, and then concatenate the character that
+represents this child together with all of the suffixes. We then append all these
+suffixes to the suffix list of the parent node.
 
 Time Complexity:
-
+- insert(): O(n), where n is the length of the string.
+- find(): O(h), where h is the height of the trie.
+- suffixes(): as it needs to traverse the entire trie, the complexity is in O(m),
+where m is the total length of all strings that are added.
 
 Space Complexity:
+O(m), where m is the total length of all strings that are added.

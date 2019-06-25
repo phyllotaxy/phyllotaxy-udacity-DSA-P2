@@ -1,6 +1,16 @@
 Reasoning:
+The first part of the algorithm uses merge sort to sort the list. The second part
+of the algorithm is actually the reverse of the combine part (divide, conquer, combine)
+of merge sort. It distributes the elements evenly into 2 list, so that the difference
+of their sizes is not greater than 1. The third part of the algorithm then converts
+the two lists into the two integers that are required.
 
 Time Complexity:
-
+- The complexity of merge sort is O(nlog(n)).
+- The complexity of distribute is O(n).
+- The complexity of converting the lists into integers is O(n).
+Therefore, the overall complexity is O(nlog(n)).
 
 Space Complexity:
+Since we need to store the 2 lists after distribution, the space complexity is in
+O(n).

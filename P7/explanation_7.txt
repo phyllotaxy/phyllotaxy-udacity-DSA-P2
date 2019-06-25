@@ -1,6 +1,9 @@
 Reasoning:
+The router is basically a trie, with the content of each node being its handler.
 
 Time Complexity:
-
+- add_handler(): O(n), where n is the length of the path.
+- lookup(): O(h), where h is the height of the trie.
 
 Space Complexity:
+O(m), where m is the total length of all paths that are added.

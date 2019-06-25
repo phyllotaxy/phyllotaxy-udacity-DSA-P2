@@ -1,6 +1,13 @@
 Reasoning:
+The algorithm makes use of the fast growth property of factorial to quickly probe
+for the upper and lower bound of the square root. Once they have been found, the
+algorithm then uses binary search to find the floored square root.
 
 Time Complexity:
-
+- The first part of the algorithm is the inverse of factorial complexity.
+- the complexity of the second part of the algorithm (binary search) is in O(log(n)).
+Combining both, we know that the complexity is definitely in O(log(n)).
 
 Space Complexity:
+The additional space used by the algorithm does not grow with the size of the
+input, which makes the space complexity O(1).
